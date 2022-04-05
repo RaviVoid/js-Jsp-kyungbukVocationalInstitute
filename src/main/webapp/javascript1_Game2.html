@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+#run {
+position:absolute;
+top:100px;
+left:100px;
+height:256px;
+border:5px solid red;
+}
+
+#run2 {
+  position:absolute;
+  width : 100px;
+  height : 100px;
+  border-radius: 50%;
+  background-color: tomato;
+
+}
+
+</style>
+
+<title>Insert title here</title>
+<!-- javascript 코드 입력 -->
+</head>
+<body>
+<div id="run" style="top:100px;left:100px; "onmouseover="mover(this);" onmouseout="mout()">
+<font color=blue><img src = "https://static-lm-rsc.ap-south-1.linodeobjects.com/b/B9Bz1to/avatar?t=1640913927">
+<b>오빠 입이랑 동그라미랑 겹치면 뽀뽀~</b>
+</font>
+</div>
+
+<div id="run2" style="top:100px;left:100px; "onmouseover="mover(this);" onmouseout="mout()">
+<font color=blue>
+<b>동그라미</b>
+</font>
+</div>
+
+
+
+<!-- javascript 코드 입력 -->
+<script>
+function mover(t){
+	t.style.top = (Math.random()*800)+"px";
+	t.style.left = (Math.random()*1200)+"px";
+	
+	console.log("top: "+t.style.top);
+}
+
+function mout(){
+	console.log("Out"+(Math.random()*1000));
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- javascript 코드 입력 -->
+</head>
+<body>
+<h1 id="num">0</h1>
+<button id="up" onclick="numUp();this.disabled=false;">시작/컴퓨터팀/미세먼지증가버튼</button><br><br>
+<button id="down" onclick="numDown();this.disabled=false;">사람팀/미세먼지감소버튼</button><br><br>
+<button onclick="numShutdown();this.disabled=false;">멈추려면갈긴만큼갈기세요/중지버튼</button><br><br>
+<button onclick="numClear();this.disabled=false;">멈추고나서누르세요/초기화버튼</button><br><br>
+<font color=red><b>용사여 이 지구를 구해주세요.</font>
+<!-- javascript 코드 입력 -->
+<script>
+let i = 0;
+
+function numUp(){
+	i++;
+	document.getElementById("num").innerHTML = i;
+	console.log("numUp함수가 호출되었습니다.")
+	timer1 = setTimeout(numUp, 10); //컴퓨터 난이도 조절
+}
+
+function numDown(){
+	i--;
+	document.getElementById("num").innerHTML = i;
+	console.log("numDown함수가 호출되었습니다.")
+	timer2 = setTimeout(numDown, 1000); //사람 난이도 조절
+}
+
+function numShutdown(){
+	clearTimeout(timer1);
+	clearTimeout(timer2);
+	console.log("numShutdown함수가 호출되었습니다.")
+}
+
+function numClear(){
+	clearTimeout(timer1);
+	clearTimeout(timer2);
+	i = 0;
+	document.getElementById("num").innerHTML = i;
+	console.log("numClear함수가 호출되었습니다.")
+}
+
+</script>
+</body>
+</html>
